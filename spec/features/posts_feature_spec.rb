@@ -12,8 +12,7 @@ describe 'posts' do
   context 'posts have been added' do
     before do
       Post.create(name: 'magic')
-  end
-
+    end
 
     it 'should display posts' do
         visit '/posts'
@@ -21,6 +20,20 @@ describe 'posts' do
         expect(page).not_to have_content('No posts')
     end
   end
+
+  context 'viewing posts' do
+    before do
+      @magic = Post.create(name: 'magic')
+    end
+
+    it 'lets a user view a post' do
+      visit '/posts'
+      click_link 'magic'
+      expect(page).to have_content 'magic'
+      expect(current_path).to eq "/posts/#{@magic.id}"
+    end
+  end
+
 end
 
 describe 'creating posts' do
