@@ -43,4 +43,5 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', group: :test
   gem 'capybara', group: :test
+  gem 'launchy', group: :test
 end
