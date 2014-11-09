@@ -34,6 +34,18 @@ describe 'posts' do
     end
   end
 
+  context 'deleting posts' do
+    before do
+      Post.create(name: 'magic')
+    end
+
+    it 'removes a post when a user clicks a delete link' do
+      visit '/posts'
+      click_link 'Delete magic'
+      expect(page).not_to have_content 'magic'
+      expect(page).to have_content 'Your post is destroyed'
+    end
+  end
 end
 
 describe 'creating posts' do

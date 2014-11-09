@@ -1,6 +1,7 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
     <h2><%= link_to "#{post.name}", post_path(post) %></h2>
+    <h2><%= link_to "Delete #{post.name}", post_path(post), method: :delete %></h2>
   <% end %>
 <% else %>
   No posts!
