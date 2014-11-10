@@ -2,8 +2,15 @@
   <% @posts.each do |post| %>
     <%= link_to (image_tag post.image.url(:thumb)), post_path(post) %>
     <h2><%= link_to "#{post.name}", post_path(post) %></h2>
-    <h2><%= link_to "Delete #{post.name}", post_path(post), method: :delete %></h2>
-    <h2><%= link_to "Comment on #{post.name}", new_post_comment_path(post) %></h2>
+    <p><%= link_to "Comment on #{post.name}", new_post_comment_path(post) %></p>
+    <% if post.comments.any? %>
+      <% post.comments.each do |comment| %>
+        <li><%= comment.thoughts %></li>
+      <% end %>
+    <% else %>
+      No comments.
+    <% end %>
+    <p><%= link_to "Delete #{post.name}", post_path(post), method: :delete %></p>
   <% end %>
 <% else %>
   No posts!

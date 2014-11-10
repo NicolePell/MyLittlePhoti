@@ -1,11 +1,12 @@
 <div class="posts">
-<%= @post.name %>
+  <%= image_tag @post.image.url(:standard) %>
+  <%= @post.name %>
 
-<% if @post.comments.any? %>
-  <% @post.comments.each do |comment| %>
-    <li><%= comment.thoughts %></li>
+  <% if @post.comments.any? %>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.thoughts %></li>
+    <% end %>
+  <% else %>
+    No comments.
   <% end %>
-<% else %>
-  No comments.
-<% end %>
 </div>
