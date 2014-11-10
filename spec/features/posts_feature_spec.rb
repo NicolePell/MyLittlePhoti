@@ -30,6 +30,7 @@ describe 'posts' do
     it 'lets a user view a post' do
       visit '/posts'
       click_link 'magic'
+      expect(page).to have_content 'magic'
       expect(current_path).to eq "/posts/#{@magic.id}"
     end
   end
