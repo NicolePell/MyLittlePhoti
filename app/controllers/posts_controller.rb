@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -18,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:name)
+    params.require(:post).permit(:name, :image)
   end
 
   def show
