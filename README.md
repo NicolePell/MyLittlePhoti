@@ -12,16 +12,16 @@ This week's Makers project is a clone of Instagram (of course all test driven). 
 
 Specifications:
 ---------------
-- [ ] Users can register/sign up (implemented with Devise)
-- [ ] Users must be signed in to create new posts
-- [ ] Posts can be created by providing a title and attaching an image
-- [ ] The image should be processed using Paperclip, to generate thumbnail-sized images
-- [ ] The homepage should list all the uploaded thumbnails - users can click through to see full-sized images
+- [x] Users can register/sign up (implemented with Devise)
+- [x] Users must be signed in to create new posts
+- [x] Posts can be created by providing a title and attaching an image
+- [x] The image should be processed using Paperclip, to generate thumbnail-sized images
+- [x] The homepage should list all the uploaded thumbnails - users can click through to see full-sized images
 - [ ] Images are hosted on S3. Stub calls to S3 in test environment.
 
 Versions:
 ---------
-- [ ] Image uploading
+- [x] Image uploading
 - [ ] Integrate bootstrap
 - [ ] Tagging
 - [ ] Geocoding and mapping
